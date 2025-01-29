@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import appwriteService from "../appwrite/config";
 import { Button, Container } from "../components";
@@ -18,7 +18,7 @@ export default function Post() {
         if (slug) {
             appwriteService.getPost(slug).then((post) => {
                 if (post) setPost(post);
-                else navigate("/");
+                // else navigate("/");
             });
         } else navigate("/");
     }, [slug, navigate]);
